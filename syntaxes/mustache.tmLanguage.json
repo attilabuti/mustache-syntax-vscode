@@ -1,0 +1,256 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Mustache",
+    "scopeName": "text.html.mustache",
+    "comment": "Syntax highlighting support for Mustache.",
+    "fileTypes": [
+        "mu",
+        "mst",
+        "stache",
+        "mustache"
+    ],
+    "patterns": [
+        {
+            "include": "text.html.basic"
+        },
+        {
+            "comment": "Comment",
+            "begin": "{{\\s*!",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.comment.begin.mustache"
+                }
+            },
+            "end": "}}",
+            "endCaptures": {
+                "0": {
+                    "name": "punctuation.definition.comment.end.mustache"
+                }
+            },
+            "name": "comment.block.mustache"
+        },
+        {
+            "comment": "Partial",
+            "begin": "{{(?=\\s*>)",
+            "beginCaptures": {
+                "0": {
+                    "name": "support.constant.mustache punctuation.definition.partial.begin.bracket.curly.mustache"
+                }
+            },
+            "end": "}}",
+            "endCaptures": {
+                "0": {
+                    "name": "support.constant.mustache punctuation.definition.partial.end.bracket.curly.mustache"
+                }
+            },
+            "patterns": [
+                {
+                    "match": ">",
+                    "name": "entity.name.function.partial.mustache"
+                },
+                {
+                    "match": "[-a-zA-Z0-9_]+",
+                    "name": "variable.parameter.mustache"
+                }
+            ],
+            "name": "meta.function.partial.mustache"
+        },
+        {
+            "comment": "Section",
+            "begin": "{{(?=\\s*#)",
+            "beginCaptures": {
+                "0": {
+                    "name": "support.constant.mustache punctuation.definition.section.begin.bracket.curly.mustache"
+                }
+            },
+            "end": "}}",
+            "endCaptures": {
+                "0": {
+                    "name": "support.constant.mustache punctuation.definition.section.end.bracket.curly.mustache"
+                }
+            },
+            "patterns": [
+                {
+                    "match": "\\.",
+                    "name": "keyword.operator.accessor.mustache"
+                },
+                {
+                    "match": "#",
+                    "name": "entity.name.function.section.mustache"
+                },
+                {
+                    "match": "[-a-zA-Z0-9_]+",
+                    "name": "variable.parameter.mustache"
+                }
+            ],
+            "name": "meta.function.section.mustache"
+        },
+        {
+            "comment": "Section End",
+            "begin": "{{(?=\\s*/)",
+            "beginCaptures": {
+                "0": {
+                    "name": "support.constant.mustache punctuation.definition.section.end.begin.bracket.curly.mustache"
+                }
+            },
+            "end": "}}",
+            "endCaptures": {
+                "0": {
+                    "name": "support.constant.mustache punctuation.definition.section.end.end.bracket.curly.mustache"
+                }
+            },
+            "patterns": [
+                {
+                    "match": "\\.",
+                    "name": "keyword.operator.accessor.mustache"
+                },
+                {
+                    "match": "/",
+                    "name": "entity.name.function.section.end.mustache"
+                },
+                {
+                    "match": "[-a-zA-Z0-9_]+",
+                    "name": "variable.parameter.mustache"
+                }
+            ],
+            "name": "meta.function.section.end.mustache"
+        },
+        {
+            "comment": "Inverted Section",
+            "begin": "{{(?=\\s*\\^)",
+            "beginCaptures": {
+                "0": {
+                    "name": "support.constant.mustache punctuation.definition.section.inverted.begin.bracket.curly.mustache"
+                }
+            },
+            "end": "}}",
+            "endCaptures": {
+                "0": {
+                    "name": "support.constant.mustache punctuation.definition.section.inverted.end.bracket.curly.mustache"
+                }
+            },
+            "patterns": [
+                {
+                    "match": "\\.",
+                    "name": "keyword.operator.accessor.mustache"
+                },
+                {
+                    "match": "\\^",
+                    "name": "entity.name.function.section.inverted.mustache"
+                },
+                {
+                    "match": "[-a-zA-Z0-9_]+",
+                    "name": "variable.parameter.mustache"
+                }
+            ],
+            "name": "meta.function.section.inverted.mustache"
+        },
+        {
+            "comment": "Set Delimiter",
+            "begin": "{{(?=\\s*=)",
+            "beginCaptures": {
+                "0": {
+                    "name": "support.constant.mustache punctuation.definition.set.delimiter.begin.bracket.curly.mustache"
+                }
+            },
+            "end": "}}",
+            "endCaptures": {
+                "0": {
+                    "name": "support.constant.mustache punctuation.definition.set.delimiter.end.bracket.curly.mustache"
+                }
+            },
+            "patterns": [
+                {
+                    "match": "[^=]",
+                    "name": "variable.parameter.mustache"
+                },
+                {
+                    "match": "=",
+                    "name": "entity.name.function.set.delimiter.mustache"
+                }
+            ],
+            "name": "meta.function.set.delimiter.mustache"
+        },
+        {
+            "comment": "Unescaped Variable Ampersand",
+            "begin": "{{(?=\\s*\\&)",
+            "beginCaptures": {
+                "0": {
+                    "name": "support.constant.mustache punctuation.definition.variable.unescaped.amp.begin.bracket.curly.mustache"
+                }
+            },
+            "end": "}}",
+            "endCaptures": {
+                "0": {
+                    "name": "support.constant.mustache punctuation.definition.variable.unescaped.amp.end.bracket.curly.mustache"
+                }
+            },
+            "patterns": [
+                {
+                    "match": "\\.",
+                    "name": "keyword.operator.accessor.mustache"
+                },
+                {
+                    "match": "\\&",
+                    "name": "entity.name.function.unescaped-variable.mustache"
+                },
+                {
+                    "match": "[-a-zA-Z0-9_]+",
+                    "name": "variable.parameter.mustache"
+                }
+            ],
+            "name": "meta.function.variable.unescaped.amp.mustache"
+        },
+        {
+            "comment": "Unescaped Variable",
+            "begin": "{{{",
+            "beginCaptures": {
+                "0": {
+                    "name": "support.constant.mustache punctuation.definition.variable.unescaped.begin.bracket.curly.mustache"
+                }
+            },
+            "end": "}}}",
+            "endCaptures": {
+                "0": {
+                    "name": "support.constant.mustache punctuation.definition.variable.unescaped.end.bracket.curly.mustache"
+                }
+            },
+            "patterns": [
+                {
+                    "match": "\\.",
+                    "name": "keyword.operator.accessor.mustache"
+                },
+                {
+                    "match": "[-a-zA-Z0-9_]+",
+                    "name": "variable.parameter.mustache"
+                }
+            ],
+            "name": "meta.function.variable.unescaped.mustache"
+        },
+        {
+            "comment": "Escaped Variable",
+            "begin": "{{",
+            "beginCaptures": {
+                "0": {
+                    "name": "support.constant.mustache punctuation.definition.variable.begin.bracket.curly.mustache"
+                }
+            },
+            "end": "}}",
+            "endCaptures": {
+                "0": {
+                    "name": "support.constant.mustache punctuation.definition.variable.end.bracket.curly.mustache"
+                }
+            },
+            "patterns": [
+                {
+                    "match": "\\.",
+                    "name": "keyword.operator.accessor.mustache"
+                },                {
+                    "match": "[-a-zA-Z0-9_]+",
+                    "name": "variable.parameter.mustache"
+                }
+            ],
+            "name": "meta.function.variable.mustache"
+        }
+    ]
+}

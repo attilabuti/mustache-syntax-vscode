@@ -1,0 +1,63 @@
+{
+  "name": "mustache-syntax-vscode",
+  "displayName": "Mustache Syntax",
+  "description": "Syntax highlighting support for Mustache.",
+  "version": "0.1.0",
+  "publisher": "attilabuti",
+  "license": "MIT",
+  "readme": "README.md",
+  "icon": "images/icon.png",
+  "author": {
+    "name": "Attila Buti"
+  },
+  "homepage": "https://github.com/attilabuti/mustache-syntax-vscode#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/attilabuti/mustache-syntax-vscode.git"
+  },
+  "bugs": {
+    "url": "https://github.com/attilabuti/mustache-syntax-vscode/issues"
+  },
+  "galleryBanner": {
+    "color": "#ffffff",
+    "theme": "light"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "syntax",
+    "mustache",
+    "highlighting",
+    "coloring",
+    "color"
+  ],
+  "engines": {
+    "vscode": "^1.0.0"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "mustache",
+        "aliases": [
+          "Mustache",
+          "mustache"
+        ],
+        "extensions": [
+          "mu",
+          "mst",
+          "stache",
+          "mustache"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "mustache",
+        "scopeName": "text.html.mustache",
+        "path": "./syntaxes/mustache.tmLanguage.json"
+      }
+    ]
+  }
+}

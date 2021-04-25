@@ -1,0 +1,34 @@
+{
+    // Symbols used for start and end a block comment
+    "comments": {
+        "blockComment": ["{{!", "}}"]
+    },
+    // Symbols used as brackets
+    "brackets": [
+        ["{", "}"],
+        ["[", "]"],
+        ["(", ")"]
+    ],
+    // Symbols that are auto closed when typing
+    "autoClosingPairs": [
+        ["{", "}"],
+        ["[", "]"],
+        ["(", ")"],
+        ["\"", "\""],
+        ["'", "'"]
+    ],
+    // Symbols that that can be used to surround a selection
+    "surroundingPairs": [
+        ["{", "}"],
+        ["[", "]"],
+        ["(", ")"],
+        ["\"", "\""],
+        ["'", "'"]
+    ],
+    "folding": {
+        "markers": {
+            "start": "^\\s*{{\\s*[#|\\^]\\s*[^}]+\\s*}}",
+            "end": "^\\s*{{\\s*/\\s*[^}]+\\s*}}"
+        }
+    }
+}
